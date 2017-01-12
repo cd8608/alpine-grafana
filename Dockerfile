@@ -44,6 +44,7 @@ RUN apk add --no-cache --update --virtual .build-deps \
    && apk add --virtual .run-deps $runDeps \
    && apk del .build-deps \
    && rm -rf /go /tmp/* /var/cache/apk/* /root/.n* /etc/bin/phantomjs
+   
 
 VOLUME ["/var/lib/grafana", "/var/log/grafana", "/etc/grafana"]
 EXPOSE 3000
