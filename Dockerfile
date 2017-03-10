@@ -3,7 +3,7 @@ FROM golang:alpine
 ENV GRAFANA_VERSION=master
 
 RUN apk add --no-cache --update --virtual .build-deps \
-        build-base git libffi-dev linux-headers mercurial nodejs openssl-dev pcre-dev \
+        build-base git libffi-dev linux-headers mercurial nodejs pcre-dev \
         postgresql-dev python3-dev tar \
     && runDeps="ca-certificates curl netcat-openbsd pcre postgresql postgresql-contrib" \
     && ln -s /bin/sh /bin/bash \
