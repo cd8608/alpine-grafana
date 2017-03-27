@@ -27,7 +27,7 @@ RUN apk add --no-cache --update --virtual .build-deps \
    && git clone https://github.com/cd8608/grafana.git -b ${GRAFANA_VERSION} \
    && cd grafana \
    && go run build.go setup \
-   && go run build.go build  \
+   && go run build.go build  
    # && npm install \
    # && npm install -g grunt-cli \
    # && cd /go/src/github.com/grafana/grafana && grunt \
