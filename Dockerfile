@@ -38,12 +38,12 @@ RUN apk add --no-cache --update --virtual .build-deps \
    && mkdir -p /etc/grafana/dashboard/ \
    && cp -a /go/src/github.com/grafana/grafana/bin /etc/grafana/ \
    && cp -ra /go/src/github.com/grafana/grafana/public_gen /etc/grafana/ \
-   && mv /etc/grafana/public_gen /etc/grafana/public \
+   # && mv /etc/grafana/public_gen /etc/grafana/public \
    && cp -ra /go/src/github.com/grafana/grafana/conf /etc/grafana/ \
    && go clean -i -r \
    && apk add --virtual .run-deps $runDeps \
    && apk del .build-deps \
-   && rm -rf /go /tmp/* /var/cache/apk/* /root/.n* /etc/bin/phantomjs
+   # && rm -rf /go /tmp/* /var/cache/apk/* /root/.n* /etc/bin/phantomjs
    
 
 VOLUME ["/var/lib/grafana", "/var/log/grafana", "/etc/grafana"]
