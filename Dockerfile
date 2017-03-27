@@ -28,20 +28,20 @@ RUN apk add --no-cache --update --virtual .build-deps \
    && cd grafana \
    && go run build.go setup \
    && go run build.go build  \
-   && npm install \
-   && npm install -g grunt-cli \
-   && cd /go/src/github.com/grafana/grafana && grunt \
-   && npm run build \
+   # && npm install \
+   # && npm install -g grunt-cli \
+   # && cd /go/src/github.com/grafana/grafana && grunt \
+   # && npm run build \
    # && npm uninstall -g grunt-cli \
    # && npm cache clear \
-   && mkdir -p /etc/grafana/bin/ \
-   && mkdir -p /etc/grafana/dashboard/ \
-   && cp -a /go/src/github.com/grafana/grafana/bin /etc/grafana/ \
-   && cp -ra /go/src/github.com/grafana/grafana/public_gen /etc/grafana/ \
+   # && mkdir -p /etc/grafana/bin/ \
+   # && mkdir -p /etc/grafana/dashboard/ \
+   # && cp -a /go/src/github.com/grafana/grafana/bin /etc/grafana/ \
+   # && cp -ra /go/src/github.com/grafana/grafana/public_gen /etc/grafana/ \
    # && mv /etc/grafana/public_gen /etc/grafana/public \
-   && cp -ra /go/src/github.com/grafana/grafana/conf /etc/grafana/ \
+   # && cp -ra /go/src/github.com/grafana/grafana/conf /etc/grafana/ \
    # && go clean -i -r \
-   && apk add --virtual .run-deps $runDeps \
+   # && apk add --virtual .run-deps $runDeps \
    # && apk del .build-deps \
    # && rm -rf /go /tmp/* /var/cache/apk/* /root/.n* /etc/bin/phantomjs
    
