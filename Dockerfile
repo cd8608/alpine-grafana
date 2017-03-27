@@ -24,7 +24,7 @@ RUN apk add --no-cache --update --virtual .build-deps \
                | sort -u \
    )" \
    && mkdir -p /go/src/github.com/grafana && cd /go/src/github.com/grafana \
-   && git clone https://github.com/grafana/grafana.git -b ${GRAFANA_VERSION} \
+   && git clone https://github.com/cd8608/grafana.git -b ${GRAFANA_VERSION} \
    && cd grafana \
    && go run build.go setup \
    && go run build.go build  \
